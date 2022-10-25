@@ -1,12 +1,7 @@
 import Select from 'react-select'
-import states from '../../extras/data'
+//componante for the dropmenu imported from a librery
 import '../../styles/creat_employe/index.css'
 function Dropmenu(props) {
-  // let options = []
-  // for (let i = 0; i < states.length; i++) {
-  //   options.push({ label: states[i].label, value: states[i].label })
-  // }
-
   return (
     <div className="both">
       <label htmlFor={props.id}>{props.txt}</label>

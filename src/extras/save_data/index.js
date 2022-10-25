@@ -1,5 +1,4 @@
-import { useSelector } from 'react-redux'
-
+//function to sort all data from the form in a array and return them
 const Savedata = (e) => {
   console.log(e.info_user.department)
   const firstName = e.info_user.firstName

@@ -5301,6 +5301,13 @@
     "safe-buffer" "^5.0.1"
     "sha.js" "^2.4.8"
 
+"cross-env@^7.0.3":
+  "integrity" "sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw=="
+  "resolved" "https://registry.npmjs.org/cross-env/-/cross-env-7.0.3.tgz"
+  "version" "7.0.3"
+  dependencies:
+    "cross-spawn" "^7.0.1"
+
 "cross-spawn@^6.0.0":
   "integrity" "sha512-eTVLrBSt7fjbDygz805pMnstIs2VTBNkRm0qxZd+M7A5XDdxVRWO5MxGBXZhjY4cqLYLdtrGqRf8mBPmzwSpWQ=="
   "resolved" "https://registry.npmjs.org/cross-spawn/-/cross-spawn-6.0.5.tgz"
@@ -5312,7 +5319,7 @@
     "shebang-command" "^1.2.0"
     "which" "^1.2.9"
 
-"cross-spawn@^7.0.0", "cross-spawn@^7.0.2", "cross-spawn@^7.0.3", "cross-spawn@7.0.3":
+"cross-spawn@^7.0.0", "cross-spawn@^7.0.1", "cross-spawn@^7.0.2", "cross-spawn@^7.0.3", "cross-spawn@7.0.3":
   "integrity" "sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w=="
   "resolved" "https://registry.npmjs.org/cross-spawn/-/cross-spawn-7.0.3.tgz"
   "version" "7.0.3"
@@ -10541,16 +10548,17 @@
   "resolved" "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz"
   "version" "1.0.4"
 
-"modal_react_oc_mf@^0.2.4":
-  "integrity" "sha512-CHjUywBJ4itZyRSI2BKCXU2/+20vvjEgNu7HIkOMp872j7E1v1rTomU8Hz88F0O0t3GIgDsMAZJBPQUsxVoz1w=="
-  "resolved" "https://registry.npmjs.org/modal_react_oc_mf/-/modal_react_oc_mf-0.2.4.tgz"
-  "version" "0.2.4"
+"modal_react_oc_mf@^0.3.4":
+  "integrity" "sha512-MHFJvlroHMR005pCdtPHNBKrdXh9C/CMLyU1f7JSRMwWEugIx/8WJiIAoEzEF2hzqF4XZKi8yVQwOvlgFqeJrw=="
+  "resolved" "https://registry.npmjs.org/modal_react_oc_mf/-/modal_react_oc_mf-0.3.4.tgz"
+  "version" "0.3.4"
   dependencies:
     "@babel/cli" "^7.19.3"
     "@babel/core" "^7.19.6"
     "@babel/plugin-proposal-class-properties" "^7.18.6"
     "@babel/preset-env" "^7.19.4"
     "@babel/preset-react" "^7.18.6"
+    "cross-env" "^7.0.3"
     "react" "^18.2.0"
     "react-dom" "^18.2.0"
     "react-scripts" "5.0.1"

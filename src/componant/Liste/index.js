@@ -1,7 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import SortableTbl from 'react-sort-search-table'
-// let data = JSON.parse(localStorage.getItem('employees'))
+//componante to liste all the data in the page liste_employee
+//composant imported from a librery
 const Liste = (props) => {
   const datas = useSelector((state) => state.data.employee)
   let col = [
@@ -26,13 +27,9 @@ const Liste = (props) => {
     'State',
     'Zip Code',
   ]
-  // const info = JSON.parse(localStorage.getItem('employees'))
-  // console.log(datas)
-  // console.log(data)
   return <SortableTbl tblData={datas} tHead={tHead} dKey={col} />
 }
 
 Liste.propTypes = {}
 
 export default Liste
-// render(<ProductsTblPage />, document.getElementById("root"));

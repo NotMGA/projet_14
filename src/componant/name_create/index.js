@@ -1,4 +1,5 @@
 import '../../styles/creat_employe/index.css'
+//composant for the label input
 function names(props) {
   return (
     <div className="both">

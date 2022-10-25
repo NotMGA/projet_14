@@ -11,7 +11,6 @@ export const basketSlice = createAsyncThunk(
   'data/employee',
   (data, thunkAPI) => {
     try {
-      console.log(data)
       let test = Savedata(data)
 
       return test
@@ -37,19 +36,22 @@ export const authSlice = createSlice({
   extraReducers: (builder) => {
     // add new employee in the store
     builder.addCase(basketSlice.fulfilled, (state, action) => {
-      const empty = current(state)
+      const cheack_employees = current(state)
       const employees = []
-      let amployee = action.payload
-      if (empty.employee === undefined) {
-        employees.push(amployee)
+      let employee_payload = action.payload
+      //cheack if we already have some data in the state
+      if (cheack_employees.employee === undefined) {
+        //if no , we push our payload in employees and save employee in the state
+        employees.push(employee_payload)
         state.employee = employees
       } else {
+        //if yes , we will push each array employee of the state in employees , our payload and then save employees in our state
         let anc_employees = current(state).employee
         for (let index = 0; index < anc_employees.length; index++) {
           employees.push(anc_employees[index])
         }
 
-        employees.push(amployee)
+        employees.push(employee_payload)
         state.employee = employees
       }
     })

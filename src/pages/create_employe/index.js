@@ -3,19 +3,19 @@ import Dropmenu from '../../componant/dropmenu'
 import Header from '../../componant/header'
 import Names from '../../componant/name_create'
 import states, { options2 } from '../../extras/data'
-import Savedata from '../../extras/save_data/index.js'
 import '../../styles/creat_employe/index.css'
 import { basketSlice } from '../../redux/reducer'
 import { useDispatch } from 'react-redux'
-import { useSelector } from 'react-redux'
-// import Modal from '../../componant/modal_save'
 import { useState } from 'react'
 import Modalcomp from 'modal_react_oc_mf'
 let options1 = []
+
+//get the states and the abbreviation of the state
 for (let i = 0; i < states.length; i++) {
   options1.push({ label: states[i].label, value: states[i].abbreviation })
 }
 function Create() {
+  //this const will be update onchange to get the value
   const [info_user, get_info_user] = useState({
     firstName: '',
     lastName: '',
@@ -27,44 +27,49 @@ function Create() {
     state: '',
     zipCode: '',
   })
-
+  //on change for the label and get the value
   function onChange_txt(value) {
-    console.log(value.target.id)
     get_info_user({
       ...info_user,
       [value.target.id]: value.target.value,
     })
-    console.log(info_user)
   }
-  const { datas } = useSelector((state) => state.data)
-  console.log(datas)
-  let sta
-  let dep
+
   const dispatch = useDispatch()
-  // dispatch(basketSlice())
+  //onchange for the input and get the value
   function onChangeinput1(value) {
-    // console.log(value)
-    // sta = value.value
     get_info_user({
       ...info_user,
       state: value.value,
     })
   }
   function onChangeinput2(value) {
-    // console.log(value)
-    // dep = value.label
     get_info_user({
       ...info_user,
       department: value.value,
     })
   }
-  function onClick() {
-    // Savedata(sta, dep)
+  //function on click to submit the form
+  function onClick(e) {
+    //disable the refresh
+    e.preventDefault()
+    //send the data of the form to the function who will save them in the global state
     dispatch(basketSlice({ info_user }))
+    //open the modal "employee create " and modified the opacity of the form
+    const visibility = document.getElementsByClassName('modal_display')
+    const container = document.getElementsByClassName('container')[2]
+    container.style.opacity = '0.2'
+    visibility[0].style.display = 'flex'
+    e.target.reset()
   }
-  function onchange_test() {
-    console.log('dqsdqsdqsdqsdqsdqsd')
+  //function to close the modal and rest the opacity
+  function action_close() {
+    const visibility = document.getElementsByClassName('modal_display')
+    const container = document.getElementsByClassName('container')[2]
+    visibility[0].style.display = 'none'
+    container.style.opacity = '1'
   }
+
   return (
     <div>
       <Header
@@ -74,15 +79,16 @@ function Create() {
 "
       />
       <div className="container">
+        <Modalcomp actionclose={action_close}></Modalcomp>
+      </div>
+
+      <div className="container">
         <h1>Create Employee</h1>
-        <form action="#" id="create-employee">
+
+        <form action="#" id="create-employee" onSubmit={onClick}>
           <Names name="firstName" txt="First Name" onChange={onChange_txt} />
           <Names name="lastName" txt="Last Name" onChange={onChange_txt} />
-          <Date
-            date="dateOfBirth"
-            txt="Date of Birth"
-            onchange={onchange_test}
-          />
+          <Date date="dateOfBirth" txt="Date of Birth" />
           <Date date="startDate" txt="Start Date" />
           <fieldset className="address">
             <legend>Address</legend>
@@ -110,11 +116,9 @@ function Create() {
             id="department"
             txt="Department"
           />
-          <button className="btn" onClick={onClick}>
+          <button type="submit" className="btn">
             Save
           </button>
-          {/* <Modal></Modal> */}
-          <Modalcomp></Modalcomp>
         </form>
       </div>
     </div>

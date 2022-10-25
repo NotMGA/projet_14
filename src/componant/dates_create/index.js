@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import DatePicker from 'react-datepicker'
-
+//componante for the date imported from a librery
 import 'react-datepicker/dist/react-datepicker.css'
 function Date(props) {
   const [startDate, setStartDate] = useState(null)
@@ -14,7 +14,6 @@ function Date(props) {
         selected={startDate}
         onChange={(date) => {
           setStartDate(date)
-          props.onchange()
         }}
       />
     </div>
