@@ -10386,10 +10386,10 @@
   "resolved" "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz"
   "version" "1.0.4"
 
-"modal_react_oc_mf@^0.3.4":
-  "integrity" "sha512-MHFJvlroHMR005pCdtPHNBKrdXh9C/CMLyU1f7JSRMwWEugIx/8WJiIAoEzEF2hzqF4XZKi8yVQwOvlgFqeJrw=="
-  "resolved" "https://registry.npmjs.org/modal_react_oc_mf/-/modal_react_oc_mf-0.3.4.tgz"
-  "version" "0.3.4"
+"modal_react_oc_mf@^0.3.5":
+  "integrity" "sha512-4Y7nOSYjqU5jbyodnqg4zHVXQvDtZ93a4rukwmdy3ZPaQs4vJ9UTAcSOaTKa+0ceuX5ufUr0PW9dJlBXZYAqyA=="
+  "resolved" "https://registry.npmjs.org/modal_react_oc_mf/-/modal_react_oc_mf-0.3.5.tgz"
+  "version" "0.3.5"
   dependencies:
     "@babel/cli" "^7.19.3"
     "@babel/core" "^7.19.6"
