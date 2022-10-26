@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import Savedata from '../../extras/save_data'
-import { useSelector } from 'react-redux'
 import { current } from '@reduxjs/toolkit'
 
 const initialState = { data: null }

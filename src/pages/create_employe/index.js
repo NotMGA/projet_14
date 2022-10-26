@@ -49,6 +49,19 @@ function Create() {
       department: value.value,
     })
   }
+  //onchange for the datepicker and get the value
+  function onchangedateB(e) {
+    get_info_user({
+      ...info_user,
+      dateOfBirth: e.toLocaleDateString('fr'),
+    })
+  }
+  function onchangedateD(e) {
+    get_info_user({
+      ...info_user,
+      startDate: e.toLocaleDateString('fr'),
+    })
+  }
   //function on click to submit the form
   function onClick(e) {
     //disable the refresh
@@ -88,8 +101,12 @@ function Create() {
         <form action="#" id="create-employee" onSubmit={onClick}>
           <Names name="firstName" txt="First Name" onChange={onChange_txt} />
           <Names name="lastName" txt="Last Name" onChange={onChange_txt} />
-          <Date date="dateOfBirth" txt="Date of Birth" />
-          <Date date="startDate" txt="Start Date" />
+          <Date
+            date="dateOfBirth"
+            txt="Date of Birth"
+            onchange={onchangedateB}
+          />
+          <Date date="startDate" txt="Start Date" onchange={onchangedateD} />
           <fieldset className="address">
             <legend>Address</legend>
             <Names name="street" txt="Street" onChange={onChange_txt} />

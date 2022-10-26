@@ -11,9 +11,11 @@ function Date(props) {
       <DatePicker
         className="input_form"
         id={props.date}
+        dateFormat="dd/MM/yyyy"
         selected={startDate}
         onChange={(date) => {
           setStartDate(date)
+          props.onchange(date)
         }}
       />
     </div>
